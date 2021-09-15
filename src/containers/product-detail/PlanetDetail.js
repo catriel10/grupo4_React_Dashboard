@@ -15,18 +15,18 @@ export default function ProductDetail() {
     useEffect(() => {
         fetch(`${API_PRODUCTS_DETAIL}${id}`)
             .then(res => res.json())
-            .then(planetApi => {
+            .then(productApi => {
                 setPlanetDetail({
                     loading: false,
-                    data: planetApi.data.planet,
+                    data: productApi.data.product,
                 })
             })
     }, [id])
     
-    const { loading, data } = planetDetail
+    const { loading, data } = productDetail
 
     return (
-        <section class="planet-detail">
+        <section class="product-detail">
             { loading ? (
                     <Code
                         height={140}
@@ -41,7 +41,8 @@ export default function ProductDetail() {
                         <img src={`/${data.image}`} />
                         <p>{data.description}</p>
                     </div>
-                    <Link to={'/planet/4'}>Otro planeta</Link>
+                    {/*<!-- <Link to={'/planet/4'}>Otro planeta</Link> -->*/}
+                   
                 </>
                 )
             }
