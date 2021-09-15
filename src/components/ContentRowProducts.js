@@ -5,7 +5,7 @@ import SmallCard from './SmallCard';
 
 /* <!-- Movies in DB --> */
 
-let moviesInDB = {
+let productsInDB = {
     title: 'Movies in Data Base',
     color: 'primary', 
     cuantity: 21,
@@ -14,8 +14,8 @@ let moviesInDB = {
 
 /* <!-- Total awards --> */
 
-let totalAwards = {
-    title:' Total awards', 
+let totalProducts = {
+    title:' Total products', 
     color:'success', 
     cuantity: '79',
     icon:'fa-award'
@@ -23,23 +23,23 @@ let totalAwards = {
 
 /* <!-- Actors quantity --> */
 
-let actorsQuantity = {
-    title:'Actors quantity' ,
+let usersQuantity = {
+    title:'Users quantity' ,
     color:'warning',
     cuantity:'49',
     icon:'fa-user-check'
 }
 
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+let cartProps = [productsInDB, totalProducts, usersQuantity];
 
-function ContentRowMovies(){
+function ContentRowProducts(){
     return (
     
         <div className="row">
             
-            {cartProps.map( (movie, i) => {
+            {cartProps.map( (product, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                return <SmallCard {...product} key={i}/>
             
             })}
 
@@ -47,4 +47,4 @@ function ContentRowMovies(){
     )
 }
 
-export default ContentRowMovies;
+export default ContentRowProducts;
